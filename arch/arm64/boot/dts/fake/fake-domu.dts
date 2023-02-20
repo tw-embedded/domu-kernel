@@ -1,0 +1,24 @@
+/dts-v1/;
+
+/ {
+    /* #*cells are here to keep DTC happy */
+    #address-cells = <2>;
+    #size-cells = <2>;
+
+    aliases {
+        net = &mac0;
+    };
+
+    passthrough {
+        compatible = "simple-bus";
+        ranges;
+        #address-cells = <2>;
+        #size-cells = <2>;
+        mac0: ethernet@10000000 {
+            compatible = "fake,device";
+            reg = <0 0x10000000 0 0x1000>;
+            interrupts = <0 80 4  0 81 4  0 82 4>;
+        };
+    };
+};
+
