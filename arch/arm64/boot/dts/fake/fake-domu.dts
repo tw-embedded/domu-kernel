@@ -19,6 +19,14 @@
             reg = <0 0x10000000 0 0x1000>;
             interrupts = <0 80 4  0 81 4  0 82 4>;
         };
+
+	virtio_mmio@20002e00 {
+		dma-coherent;
+		interrupts = <0x0 0x19 0x1>;
+		reg = <0x0 0x20002e00 0x0 0x200>;
+		compatible = "virtio,mmio";
+		status = "nok";
+	};
     };
 };
 
