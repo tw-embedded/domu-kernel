@@ -26,6 +26,8 @@
 		reg = <0x0 0x20002e00 0x0 0x200>;
 		compatible = "virtio,mmio";
 		status = "nok";
+		xen,path = "/amba/virtio_mmio@20002e00";
+		xen,reg = <0x0 0x20002e00 0x200 0x0 0x20002e00>;
 	};
     };
 };
